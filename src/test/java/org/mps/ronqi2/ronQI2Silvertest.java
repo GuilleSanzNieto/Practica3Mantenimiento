@@ -1,6 +1,7 @@
 package org.mps.ronqi2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -353,5 +354,29 @@ public class RonQI2SilverTest {
      * Usa el ParameterizedTest para realizar un número de lecturas previas a calcular si hay apnea o no (por ejemplo 4, 5 y 10 lecturas).
      * https://junit.org/junit5/docs/current/user-guide/index.html#writing-tests-parameterized-tests
      */
+
+    @ParameterizedTest
+    @ValueSource(ints = {4, 5, 10})
+    @DisplayName("Apnea detectada correctamente con distintas cantidades de lecturas válidas")
+    void testApneaConMediaValida(int numLecturas) {
+        RonQI2Silver ronQ = new RonQI2Silver();
+        Dispositivo dispositivo = mock(Dispositivo.class);
+
+        // Siempre devuelve el mismo valor
+        when(dispositivo.leerSensorPresion()).thenReturn(15.0f);
+        when(dispositivo.leerSensorSonido()).thenReturn(15.0f);
+
+        ronQ.anyadirDispositivo(dispositivo);
+        ronQ.inicializar();
+
+        for (int i = 0; i < numLecturas; i++) {
+            ronQ.obtenerNuevaLectura();
+        }
+
+        boolean resultado = ronQ.evaluarApneaSuenyo();
+
+        assertFalse(resultado);
+    }
+
 
 }
