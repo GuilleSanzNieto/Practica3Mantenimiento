@@ -10,29 +10,30 @@ public class RonQI2Silver extends RonQI2{
     private List&lt;Float&gt; lecturasS;
     private float thresholdP;
     private float thresholdS;
-<span class="fc" id="L13">    public RonQI2Silver() {</span>
-<span class="fc" id="L14">        lecturasP = new ArrayList&lt;Float&gt;();</span>
-<span class="fc" id="L15">        lecturasS = new ArrayList&lt;Float&gt;();</span>
-<span class="fc" id="L16">        thresholdP = 20.0f;</span>
-<span class="fc" id="L17">        thresholdS = 30.0f;</span>
-<span class="fc" id="L18">        numLecturas=5;</span>
-<span class="fc" id="L19">    }</span>
+
+<span class="fc" id="L14">    public RonQI2Silver() {</span>
+<span class="fc" id="L15">        lecturasP = new ArrayList&lt;Float&gt;();</span>
+<span class="fc" id="L16">        lecturasS = new ArrayList&lt;Float&gt;();</span>
+<span class="fc" id="L17">        thresholdP = 20.0f;</span>
+<span class="fc" id="L18">        thresholdS = 30.0f;</span>
+<span class="fc" id="L19">        numLecturas=5;</span>
+<span class="fc" id="L20">    }</span>
 
     /* 
      * Obtiene las lecturas de presion y sonido del dispositivo y las almacena en sus respectivos
      * contenedores.
     */
     public void obtenerNuevaLectura(){
-<span class="nc" id="L26">        lecturasP.add(disp.leerSensorPresion());</span>
-<span class="nc bnc" id="L27" title="All 2 branches missed.">        if(lecturasP.size()&gt;numLecturas){</span>
-<span class="nc" id="L28">            lecturasP.remove(0); </span>
+<span class="fc" id="L27">        lecturasP.add(disp.leerSensorPresion());</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if(lecturasP.size()&gt;numLecturas){</span>
+<span class="fc" id="L29">            lecturasP.remove(0); </span>
         }
         //FALLO 1: AQUI NO DEBE LEER .LEERSENSORPRESION SINO LEERSENSORSONIDO
-<span class="nc" id="L31">        lecturasS.add(disp.leerSensorSonido());</span>
-<span class="nc bnc" id="L32" title="All 2 branches missed.">        if(lecturasS.size()&gt;numLecturas){</span>
-<span class="nc" id="L33">            lecturasS.remove(0); </span>
+<span class="fc" id="L32">        lecturasS.add(disp.leerSensorSonido());</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if(lecturasS.size()&gt;numLecturas){</span>
+<span class="fc" id="L34">            lecturasS.remove(0); </span>
         }
-<span class="nc" id="L35">    }</span>
+<span class="fc" id="L36">    }</span>
 
     /* 
      * Evalua la apnea del sueno. 
@@ -43,24 +44,24 @@ public class RonQI2Silver extends RonQI2{
     @Override
     public boolean evaluarApneaSuenyo() {
         boolean resultado;
-<span class="nc" id="L46">        Double avgP = lecturasP.stream()</span>
-<span class="nc" id="L47">                .mapToDouble(d -&gt; d)</span>
-<span class="nc" id="L48">                .average()</span>
-<span class="nc" id="L49">                .orElse(0.0);</span>
-<span class="nc" id="L50">        Double avgS = lecturasS.stream()</span>
-<span class="nc" id="L51">                .mapToDouble(d -&gt; d)</span>
-<span class="nc" id="L52">                .average()</span>
-<span class="nc" id="L53">                .orElse(0.0);</span>
+<span class="fc" id="L47">        Double avgP = lecturasP.stream()</span>
+<span class="fc" id="L48">                .mapToDouble(d -&gt; d)</span>
+<span class="fc" id="L49">                .average()</span>
+<span class="fc" id="L50">                .orElse(0.0);</span>
+<span class="fc" id="L51">        Double avgS = lecturasS.stream()</span>
+<span class="fc" id="L52">                .mapToDouble(d -&gt; d)</span>
+<span class="fc" id="L53">                .average()</span>
+<span class="fc" id="L54">                .orElse(0.0);</span>
         
         // FALLO 2, NO ES &gt;= SINO QUE MAYOR(&gt;)
-<span class="nc bnc" id="L56" title="All 4 branches missed.">        if (avgP&gt;thresholdP &amp;&amp; avgS &gt; thresholdS){</span>
+<span class="fc bfc" id="L57" title="All 4 branches covered.">        if (avgP &gt; thresholdP &amp;&amp; avgS &gt; thresholdS){</span>
             //FALLO 3: AQUI TIENE QUE DEVOLVER TRUE y en el ELSE (FALSE)
-<span class="nc" id="L58">            resultado = true;</span>
+<span class="fc" id="L59">            resultado = true;</span>
         }   
         else{
-<span class="nc" id="L61">            resultado = false;</span>
+<span class="fc" id="L62">            resultado = false;</span>
         }
-<span class="nc" id="L63">        return resultado;</span>
+<span class="fc" id="L64">        return resultado;</span>
     }
 
    

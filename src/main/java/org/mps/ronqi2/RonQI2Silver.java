@@ -10,6 +10,7 @@ public class RonQI2Silver extends RonQI2{
     private List<Float> lecturasS;
     private float thresholdP;
     private float thresholdS;
+
     public RonQI2Silver() {
         lecturasP = new ArrayList<Float>();
         lecturasS = new ArrayList<Float>();
@@ -53,7 +54,7 @@ public class RonQI2Silver extends RonQI2{
                 .orElse(0.0);
         
         // FALLO 2, NO ES >= SINO QUE MAYOR(>)
-        if (avgP>thresholdP && avgS > thresholdS){
+        if (avgP > thresholdP && avgS > thresholdS){
             //FALLO 3: AQUI TIENE QUE DEVOLVER TRUE y en el ELSE (FALSE)
             resultado = true;
         }   

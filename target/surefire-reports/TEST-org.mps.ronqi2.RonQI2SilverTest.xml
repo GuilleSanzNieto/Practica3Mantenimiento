@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="org.mps.ronqi2.RonQI2SilverTest" time="1.709" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="org.mps.ronqi2.RonQI2SilverTest" time="1.737" tests="16" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/22.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/guillesanz/Desktop/Mantenimiento/Practica3Mantenimiento/target/surefire/surefirebooter-20250403123240080_3.jar /Users/guillesanz/Desktop/Mantenimiento/Practica3Mantenimiento/target/surefire 2025-04-03T12-32-39_974-jvmRun1 surefire-20250403123240080_1tmp surefire_0-20250403123240080_2tmp"/>
+    <property name="sun.java.command" value="/Users/guillesanz/Desktop/Mantenimiento/Practica3Mantenimiento/target/surefire/surefirebooter-20250409161459439_3.jar /Users/guillesanz/Desktop/Mantenimiento/Practica3Mantenimiento/target/surefire 2025-04-09T16-14-59_341-jvmRun1 surefire-20250409161459439_1tmp surefire_0-20250409161459439_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/guillesanz/Desktop/Mantenimiento/Practica3Mantenimiento/target/test-classes:/Users/guillesanz/Desktop/Mantenimiento/Practica3Mantenimiento/target/classes:/Users/guillesanz/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/guillesanz/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/guillesanz/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/guillesanz/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/guillesanz/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/guillesanz/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/guillesanz/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/guillesanz/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/guillesanz/.m2/repository/org/mockito/mockito-core/5.16.0/mockito-core-5.16.0.jar:/Users/guillesanz/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/Users/guillesanz/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/Users/guillesanz/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/guillesanz/.m2/repository/org/mockito/mockito-junit-jupiter/5.16.0/mockito-junit-jupiter-5.16.0.jar:"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/guillesanz/Desktop/Mantenimiento/Practica3Mantenimiento/target/surefire/surefirebooter-20250403123240080_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/guillesanz/Desktop/Mantenimiento/Practica3Mantenimiento/target/surefire/surefirebooter-20250409161459439_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="22.0.2"/>
@@ -59,7 +59,7 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testReconectarMalDos" classname="org.mps.ronqi2.RonQI2SilverTest" time="1.644">
+  <testcase name="testReconectarMalDos" classname="org.mps.ronqi2.RonQI2SilverTest" time="1.618">
     <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (/Users/guillesanz/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
@@ -67,12 +67,19 @@ WARNING: If a serviceability tool is not in use, please run with -Djdk.instrumen
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
 ]]></system-err>
   </testcase>
-  <testcase name="testReconectarMalUno" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.004"/>
-  <testcase name="testInicializarUnoMal" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.003"/>
-  <testcase name="testConfigurarPresionFalse" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.003"/>
+  <testcase name="testReconectarMalUno" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.005"/>
+  <testcase name="testInicializarUnoMal" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.004"/>
+  <testcase name="testApneaCorrecto" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.014"/>
+  <testcase name="testApneaIncorrectoPresion" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.005"/>
+  <testcase name="testEstaConectadoFalse" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.002"/>
+  <testcase name="testConfigurarPresionFalse" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.005"/>
   <testcase name="testReconectar" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.003"/>
-  <testcase name="testReconectarMal" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.003"/>
+  <testcase name="testApneaIncorrecto" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.005"/>
+  <testcase name="testReconectarMal" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.004"/>
+  <testcase name="testEstaConectadoTrue" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.002"/>
   <testcase name="testInicializar" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.003"/>
-  <testcase name="testConfigurarSonidoFalse" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.003"/>
-  <testcase name="testInicializarMal" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.002"/>
+  <testcase name="testConfigurarSonidoFalse" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.002"/>
+  <testcase name="testInicializarMal" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.003"/>
+  <testcase name="testApneaIncorrectoSonido" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.005"/>
+  <testcase name="testApneaIncorrectoMasLecturas" classname="org.mps.ronqi2.RonQI2SilverTest" time="0.005"/>
 </testsuite>
